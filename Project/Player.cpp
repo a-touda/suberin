@@ -57,26 +57,26 @@ bool CPlayer::Load(void){
 			"待機",
 			0,0,
 			60,64,
-			TRUE,{{5,0,0},{5,1,0},{5,2,0},{5,3,0},{5,4,0},{5,5,0},{5,6,0},{5,7,0}} 
+			TRUE,{{5,0,0}} 
 		},
 		//移動
 		{
 			"移動",
-			0,70,
-			60,64,
-			TRUE,{{5,0,0},{5,1,0},{5,2,0},{5,3,0},{5,4,0},{5,5,0}} 
+			64,0,
+			64,64,
+			TRUE,{{5,0,0}} 
 		},
 		//ジャンプ
 		{
 			"ジャンプ開始",
-			0,140,
-			60,64,
-			FALSE,{{5,0,0},{5,1,0},{5,2,0},{5,3,0}} 
+			128,0,
+			64,64,
+			FALSE,{{5,0,0}} 
 		},
 		{
 			"ジャンプ終了",
 			240,140,
-			60,64,
+			64,64,
 			FALSE,{{2,0,0},{2,1,0}} 
 		},
 		//攻撃
@@ -248,18 +248,7 @@ void CPlayer::UpdateKey(void){
 	{
 		m_ShotArray[i].Update();
 	}
-	/*//上キーでジャンプ
-	if(g_pInput->IsKeyHold(MOFKEY_UP) && !m_bJump)
-	{
-		m_bJump = true;
-		m_MoveY = PLAYER_JUMP;
-		m_Motion.ChangeMotion(MOTION_JUMPSTART);
-	}*/
-	/*//SPACEキーで攻撃
-	if(g_pInput->IsKeyPush(MOFKEY_SPACE))
-	{
-		m_Motion.ChangeMotion(MOTION_ATTACK);
-	}*/
+	
 }
 
 /**
